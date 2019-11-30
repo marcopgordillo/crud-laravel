@@ -1,9 +1,9 @@
 <template>
-    <div class="crud row">
-        <div class="col-2">
+    <div class="crud row mb-2">
+        <div class="col-md-2">
             <img class="img-thumbnail" :src="image"/>
         </div>
-        <div class="col-2">
+        <div class="col-md-4">
             <h3>Name: {{ name | properCase }}</h3>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
