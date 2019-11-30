@@ -1,19 +1,24 @@
 <template>
-    <div class="crud">
-        <div class="col-1">
-            <img :src="image"/>
+    <div class="crud row">
+        <div class="col-2">
+            <img class="img-thumbnail" :src="image"/>
         </div>
         <div class="col-2">
             <h3>Name: {{ name | properCase }}</h3>
-            <select @change="update">
-                <option
-                    v-for="col in [ 'red', 'green' ]"
-                    :value="col"
-                    :key="col"
-                    :selected="col === color ? 'selected' : ''"
-                >{{ col | properCase }}</option>
-            </select>
-            <button @click="del">Delete</button>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" :for="`inputGroupSelect${id}`">Color: </label>
+                </div>
+                <select class="custom-select" :id="`inputGroupSelect${id}`" @change="update">
+                    <option
+                        v-for="col in [ 'red', 'green' ]"
+                        :value="col"
+                        :key="col"
+                        :selected="col === color ? 'selected' : ''"
+                    >{{ col | properCase }}</option>
+                </select>
+            </div>
+            <button class="btn btn-danger" @click="del">Delete</button>
         </div>
     </div>
 </template>

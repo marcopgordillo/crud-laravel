@@ -1,6 +1,6 @@
 <template>
-    <div id="app">
-        <div class="heading">
+    <div id="app" class="container">
+        <div class="heading row">
             <h1>Cruds</h1>
         </div>
         <crud-component
@@ -10,8 +10,8 @@
             @update="update"
             @delete="del"
         ></crud-component>
-        <div>
-            <button @click="create()">Add</button>
+        <div class="row my-3">
+            <button class="btn btn-outline-primary btn-lg" @click="create()">Add</button>
         </div>
     </div>
 </template>
